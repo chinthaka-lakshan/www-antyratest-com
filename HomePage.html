@@ -45,6 +45,7 @@
                 margin: 50px;
                 opacity: 0.7;
                 transition: 0.3s;
+                filter: grayscale(100%) brightness(0.8) contrast(1.2);
             }
             .services {
                 background:#F6F6F6CC ;
@@ -63,6 +64,13 @@
                 border: none;
                 text-align: left;
                 background: #F6F6F6CC;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             }
             .service-card h5 {
                 margin-top: 10px;
@@ -79,6 +87,9 @@
             }
             .what-makes-defferent h2 {
                 font-weight: bold;
+            }
+            .btn-custom {
+                background: blue;
             }
             .feature-card {
                 border: none;
@@ -97,6 +108,7 @@
             }
             .story {
                 color: black;
+                padding-bottom: 60px;
             }
             .story h2 {
                 font-weight: bold
@@ -110,6 +122,153 @@
                 max-height: 250px;
                 border-radius: 10px;
                 object-fit: cover;
+            }
+            .news-section {
+                padding: 60px 0;
+                background-color: #f8f9fa;
+            }
+            
+            .news-title {
+                font-weight: bold;
+                color: #000000;
+                margin-bottom: 50px;
+            }
+            
+            .news-card {
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+            }
+            
+            .news-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+            
+            .news-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            
+            .news-content {
+                padding: 20px;
+            }
+            
+            .news-date {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+            
+            .date-number {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #333;
+                margin-right: 8px;
+            }
+            
+            .date-text {
+                font-size: 0.9rem;
+                color: #666;
+                line-height: 1.2;
+            }
+            
+            .news-title-card {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+            
+            .news-description {
+                font-size: 0.9rem;
+                color: #777;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+            
+            .read-more {
+                color: #5a9aa0;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.9rem;
+            }
+            
+            .read-more:hover {
+                color: #4a8a90;
+                text-decoration: underline;
+            }
+            .footer {
+            background-color: #4a4a4a;
+            color: #ffffff;
+            padding: 50px 0 30px 0;
+            }
+            
+            .footer-column h5 {
+                color: #ffffff;
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            
+            .footer-column p {
+                color: #cccccc;
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            
+            .footer-column ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .footer-column ul li {
+                margin-bottom: 10px;
+            }
+            
+            .footer-column ul li a {
+                color: #cccccc;
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s ease;
+            }
+            
+            .footer-column ul li a:hover {
+                color: #ffffff;
+            }
+            
+            .social-icons {
+                display: flex;
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 35px;
+                height: 35px;
+                background-color: #666;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+            
+            .social-icon:hover {
+                background-color: #5a9aa0;
+                color: #ffffff;
+            }
+            
+            .social-icon i {
+                font-size: 16px;
             }
         </style>
         
@@ -126,12 +285,12 @@
                 <div class="navbar-collapse" id="navbarnav">                
                     <ul class="navbar-nav flex-row ms-auto">
                         <li class="nav-item"><a class="navbar-link active px-3" href="#">Home</a> </li>
-                        <li class="nav-item"><a class="navbar-link px-3" href="#">Service</a> </li>
+                        <li class="nav-item"><a class="navbar-link px-3" href="#service">Service</a> </li>
                         <li class="nav-item"><a class="navbar-link px-3" href="#">Find a Team</a> </li>
-                        <li class="nav-item"><a class="navbar-link px-3" href="#">About Us</a></li>
+                        <li class="nav-item"><a class="navbar-link px-3" href="#aboutus">About Us</a></li>
                         <li class="nav-item"><a class="navbar-link px-3" href="#">Articles</a></li>
                         <li class="nav-item"><a class="navbar-link px-3" href="#">Portofolio</a></li>
-                        <li class="nav-item"><a class="navbar-link px-3" href="#">Contact us</a></li>
+                        <li class="nav-item"><a class="navbar-link px-3" href="#footer">Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -191,7 +350,7 @@
             </section>
 
             <!-- Services Section -->
-            <section class="services py-5">
+            <section class="services py-5" id="service">
                 <div class="container">
                     <div class="row mb-4">
                         <div class="col-md-6">
@@ -220,10 +379,10 @@
                             <div class="card service-card">
                                 <img src="city.jpg" alt="city">
                                 <div class="card-body">
-                                        <h5>Commercial</h5>
-                                        <p>Our experience building in the
-                                            Commercial field includes Showrooms,
-                                            Supermalls and Office Buildings</p>
+                                    <h5>Commercial</h5>
+                                    <p>Our experience building in the
+                                        Commercial field includes Showrooms,
+                                        Supermalls and Office Buildings</p>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +405,7 @@
             </section>
 
             <!-- What Make Us Different Section -->
-            <section class="what-makes-defferent py-3">
+            <section class="what-makes-defferent py-3" id="aboutus">
                 <div class="container">
                     <div class="row md-4 g-4">
                         <div class="col-md-6">
@@ -314,39 +473,152 @@
                 </div>
             </section>
 
-            <!-- Our Story Section -->
             <section class="story">
                 <div class="container">
-                    <div class="row">
-                    <div class="md-4 g-4">
+                    <div class="row align-items-center">
                         <div class="col-md-6">
-                            <h2> Our Story<br>Who we are</h1>
+                            <div class="content-section">
+                                <h2>Our Story<br>Who we are</h2>
+                                <p class="des">
+                                    Established in 1992, PT. Wahana Cipta operates as a General
+                                    Contracting company with a footprint that we have planted
+                                    throughout Indonesia. Initially, we focused on construction in
+                                    the field of residential housing development in Jakarta. 
+                                    As the company grows, now we are present as a reliable...
+                                </p>
+                                <div>
+                                    <a href="#" class="btn-custom">
+                                        See More
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="des col-md-6 text-muted">
-                            Established in 1992, PT. Wahana Cipta operates as a General
-                            Contracting company with a footprint that we have planted
-                            throughout Indonesia. Initially, we focused on construction in
-                            the field of residential housing development in Jakarta. 
-                            As the company grows, now we are present as a reliable...
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img src="storyimg.jpg" alt="storyimg" class="img-fluid1 rounded">
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <a class="btn-custom mt-3">
-                            See More
-                        </a>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <img src="storyimg.jpg" class="img-fluid1 rounded">
-                    </div>
-                    </div>
-
                 </div>
-
-            </section>
-            <section class="updates">
-
             </section>
 
+            <!-- News & Update Section -->
+            <section class="news-section">
+            <div class="container">
+                <h2 class="news-title">News & Update</h2>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="news-card">
+                            <img src="paintbucket.jpg" alt="paintbucket" class="news-image">
+                            <div class="news-content">
+                                <div class="news-date">
+                                    <span class="date-number">12</span>
+                                    <div class="date-text">
+                                        <div>Jan</div>
+                                    </div>
+                                </div>
+                                <h3 class="news-title-card">Elements of Content in Epoxy Paint</h3>
+                                <p class="news-description">
+                                    Epoxy paint and epoxy floor coatings have entered the two terms? And what does that have to do with the construction of existing buildings? epoxy itself is included in the type of resin...
+                                </p>
+                                <a href="#" class="read-more">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="news-card">
+                            <img src="warehouse.jpg" alt="Warehouse construction" class="news-image">
+                            <div class="news-content">
+                                <div class="news-date">
+                                    <span class="date-number">12</span>
+                                    <div class="date-text">
+                                        <div>Jan</div>
+                                    </div>
+                                </div>
+                                <h3 class="news-title-card">5 Right Steps in Warehouse Planning and Construction</h3>
+                                <p class="news-description">
+                                    Planning the construction of a warehouse for both industrial, personal and other goods storage must be done carefully. When the planning is done properly, the construction is...
+                                </p>
+                                <a href="#" class="read-more">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="news-card">
+                            <img src="home.jpg" alt="Modern house architecture" class="news-image">
+                            <div class="news-content">
+                                <div class="news-date">
+                                    <span class="date-number">12</span>
+                                    <div class="date-text">
+                                        <div>Jan</div>
+                                    </div>
+                                </div>
+                                <h3 class="news-title-card">The Right Solution to Build a Sturdy Type 45 House</h3>
+                                <p class="news-description">
+                                    Having a sturdy home is certainly everyone's dream. However, building a house is not a space where the residents can rest and take shelter from the bad weather...
+                                </p>
+                                <a href="#" class="read-more">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6 col-sm-12 footer-column">
+                        <h5>General Project</h5>
+                        <p>
+                            It's a general contractor company based in Jakarta. More than 25 years of 
+                            experience in building and serving our Indonesia's development.
+                        </p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-google"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Company Column -->
+                    <div class="col-lg-2 col-md-3 col-sm-6 footer-column">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">How it Works</a></li>
+                            <li><a href="#">Term</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- More Column -->
+                    <div class="col-lg-2 col-md-3 col-sm-6 footer-column">
+                        <h5>More</h5>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">License</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Empty column for spacing -->
+                    <div class="col-lg-4 col-md-12"></div>
+                </div>
+            </div>
+        </footer>
             </div>
         </div>
     </body>
